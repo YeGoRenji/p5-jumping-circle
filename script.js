@@ -14,6 +14,7 @@ function setup() {
 }
 
 function draw() {
+  // Handling the Jump
   if(((keyIsDown(32)) && (ch >= h - r - 1)) || animationstill){
       animationstill = true;
       i+=3;
@@ -26,31 +27,26 @@ function draw() {
       
   }else 
   {
+    // GRAVITY BOI
     ch += g * (deltaTime/1000) * 20;
   }
   
-  ch = constrain(ch, r, h-r);
-
-  /*
-  if(ch >= h-r){
-    ch = h-r;
-  }
-  */
-  if(x <= 0 + r){
-     x = r;
-  }
-  if(x >= w - r){
-     x = w - r;
-  }
-  
-  background(215);
-  circle(x,ch,2*r);
-
+  // Movement
   if (keyIsDown(LEFT_ARROW)){
     x-=3;
   }
   if (keyIsDown(RIGHT_ARROW)){
     x+=3;
   }
+
+  // Constains
+  ch = constrain(ch, r, h-r);
+  x = constrain(x, r, w-r);
+  
+  background(215);
+  noStroke();
+  fill('#fb743e');
+  circle(x,ch,2*r);
+
 
 }

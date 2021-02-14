@@ -1,5 +1,3 @@
-let w = 400;
-let h = 400;
 let x = 200;
 let g = 9.81;
 let time = 0;
@@ -9,13 +7,13 @@ let animationstill = false;
 let i = 0;
 
 function setup() {
-  createCanvas(w, h);
+  createCanvas(400, 400);
   frameRate(60);
 }
 
 function draw() {
   // Handling the Jump
-  if(((keyIsDown(32)) && (ch >= h - r - 1)) || animationstill){
+  if(((keyIsDown(32)) && (ch >= height - r - 1)) || animationstill){
       animationstill = true;
       i+=3;
       ch -= g * (deltaTime/1000) * 55;
@@ -40,13 +38,11 @@ function draw() {
   }
 
   // Constains / Boundery Handling
-  ch = constrain(ch, r, h-r);
-  x = constrain(x, r, w-r);
+  ch = constrain(ch, r, height - r);
+  x = constrain(x, r, width - r);
   
   background(215);
   noStroke();
   fill('#fb743e');
   circle(x,ch,2*r);
-
-
 }

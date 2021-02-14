@@ -17,7 +17,7 @@ function draw() {
   if(((keyIsDown(32)) && (ch >= h - r - 1)) || animationstill){
       animationstill = true;
       i+=3;
-      ch -= g * (deltaTime/1000) * 55
+      ch -= g * (deltaTime/1000) * 55;
       if(i>=20){
         
         i=0;
@@ -26,13 +26,16 @@ function draw() {
       
   }else 
   {
-    ch += g * (deltaTime/1000) * 20
+    ch += g * (deltaTime/1000) * 20;
   }
   
-  
+  ch = constrain(ch, r, h-r);
+
+  /*
   if(ch >= h-r){
     ch = h-r;
   }
+  */
   if(x <= 0 + r){
      x = r;
   }
@@ -42,14 +45,12 @@ function draw() {
   
   background(215);
   circle(x,ch,2*r);
-  
+
   if (keyIsDown(LEFT_ARROW)){
     x-=3;
   }
   if (keyIsDown(RIGHT_ARROW)){
     x+=3;
   }
-  
-  
-  
+
 }

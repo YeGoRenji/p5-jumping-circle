@@ -19,6 +19,7 @@ function draw() {
       i+=3;
       ch -= g * (deltaTime/1000) * 50
       if(i>=20){
+        
         i=0;
         animationstill = false;
       }

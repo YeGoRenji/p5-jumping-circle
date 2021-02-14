@@ -39,7 +39,7 @@ function draw() {
     x+=3;
   }
 
-  // Constains
+  // Constains / Boundery Handling
   ch = constrain(ch, r, h-r);
   x = constrain(x, r, w-r);
   

@@ -17,7 +17,7 @@ function draw() {
   if(((keyIsDown(32)) && (ch >= 400 - r - 1)) || animationstill){
       animationstill = true;
       i+=3;
-      ch -= g * (deltaTime/1000) * 50
+      ch -= g * (deltaTime/1000) * 55
       if(i>=20){
         
         i=0;

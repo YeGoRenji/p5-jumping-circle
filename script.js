@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-  if(((keyIsDown(32)) && (ch >= 400 - r - 1)) || animationstill){
+  if(((keyIsDown(32)) && (ch >= h - r - 1)) || animationstill){
       animationstill = true;
       i+=3;
       ch -= g * (deltaTime/1000) * 55
@@ -30,14 +30,14 @@ function draw() {
   }
   
   
-  if(ch >= 400-r){
-    ch = 400-r;
+  if(ch >= h-r){
+    ch = h-r;
   }
   if(x <= 0 + r){
      x = r;
   }
-  if(x >= 400 - r){
-     x = 400 - r;
+  if(x >= w - r){
+     x = w - r;
   }
   
   background(215);
